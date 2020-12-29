@@ -1,0 +1,46 @@
+#include<iostream>
+using namespace std;
+
+//prototype of the recursive function
+double power(int, int);
+
+//function main begins program execution
+int main()
+{
+    int x, y;
+    
+    // let the user know about the program
+    cout << "\n\n\tProgram taht prints X^Y using recursion.";
+    
+    //prompt and read input from the user
+    cout << "\n\n\tEnter your choice of an integer(X) : ";
+    cin >> x;
+    
+    //prompt and read input from the user
+    cout << "\n\tEnter your choice of another integer(Y) : ";
+    cin >> y;
+    //call the recursive function
+    cout << "\n\n\t" << x << " raised to the power of " << y << " is: " << power(x, y);
+    
+    //let the screen be paused to see the output by the user
+    cout << "\n\n\t";
+    system("pause");
+    return 0;
+    
+}// end function, main
+//returns the value of X raised to the power of Y
+double power(int x, int y){
+    // base case
+    if(y == 0)
+    return 1;
+    
+    if(y == 1)
+    return x;
+    //recursive case
+    if(y>1)
+    return (x * power(x, y-1));
+    
+    //recursive case
+    if(y<0)
+    return (1/power(x, -y));
+}//end recursive funciton, power
