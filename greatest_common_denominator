@@ -1,0 +1,39 @@
+#include<iostream>
+using namespace std;
+
+//prototype of the recursive function
+int gcd(int, int);
+
+int main(){
+    
+    int x, y;
+    
+    //let the user know about the program
+    cout << "\n\tProgram that prints GCD using recursion.";
+    
+    //prompt and read input from the user
+    cout << "\n\n\tEnter your choice of an integer(X) : ";
+    cin >> x;
+    
+    //prompt and read input from the user
+    cout << "\n\tEnter your choice of another integer(Y): ";
+    cin >> y;
+    
+    //call the recursive funciton
+    cout << "\n\n\tG.C.D of " << x << " and " << y << " is : " << gcd(x, y);
+    //let the screen paused to see the output by the user
+    cout << "\n\n\t";
+    system("pause");
+    return 0;
+    
+}//end funciton, main
+
+// returns the value of X raised to the power of Y
+int gcd(int x, int y){
+    //base case
+    if(y == 0)
+    return x;
+    //recursive case
+    return gcd(y, x % y);
+    
+}// end recursive funciton, gcd
